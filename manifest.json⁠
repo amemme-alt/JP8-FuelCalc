@@ -1,0 +1,8 @@
+{
+  "name": "Calcolatore JP-8",
+  "short_name": "JP8 Fuel",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#1e3a8a",
+  "theme_color": "#1e3a8a"
+}
