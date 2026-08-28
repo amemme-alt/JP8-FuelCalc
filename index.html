@@ -227,6 +227,10 @@
   }
 
   function ottieniTemperaturaPosizione() {
+    if (!navigator.onLine) {
+      alert("Connessione assente. Inserisci la temperatura manualmente.");
+      return;
+    }
     if (!navigator.geolocation) {
       alert("Geolocalizzazione non supportata.");
       return;
@@ -252,6 +256,13 @@
     }, (error) => {
       alert("Permesso di localizzazione negato o GPS disattivato.");
     }, { enableHighAccuracy: true });
+  }
+
+  // Registrazione Service Worker per il funzionamento offline
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js');
+    });
   }
 </script>
 
